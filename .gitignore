@@ -2,5 +2,6 @@
 *.coveragexml.xml
 *.coveragexml
 *.user
-bin
-obj
+bin/*
+obj/*
+
