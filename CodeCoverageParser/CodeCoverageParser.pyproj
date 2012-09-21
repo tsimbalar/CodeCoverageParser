@@ -12,6 +12,9 @@
     <OutputPath>.</OutputPath>
     <Name>CodeCoverageParser</Name>
     <RootNamespace>CodeCoverageParser</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>c040fad3-b7d8-4fd7-bafd-4acb289a073c</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
