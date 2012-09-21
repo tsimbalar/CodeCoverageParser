@@ -5,6 +5,12 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CodeCoverageParser", "CodeC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoverageXml", "CoverageXml\CoverageXml.csproj", "{3A0C88DC-32E4-43C0-AB20-0049BE91AEFD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "other", "other", "{4CBCD7FE-823A-4D0A-99F2-0F883CFEB519}"
+	ProjectSection(SolutionItems) = preProject
+		generateFromxsd.bat = generateFromxsd.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

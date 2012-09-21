@@ -4,4 +4,6 @@
 *.user
 bin/*
 obj/*
+CoverageXml/bin/*
+CoverageXml/obj/*
 
