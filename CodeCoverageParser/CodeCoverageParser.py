@@ -16,14 +16,24 @@ def main():
     import System.IO
     import System.Text
 
-    reader = System.Xml.XmlTextReader(r"C:\Users\tdesodt\Desktop\TFSBuildUser_TFSBUILDCTRL1 2012-09-20 16_08_14_Any CPU_Release")
+    reader = System.Xml.XmlTextReader(r"C:\Users\tdesodt\Desktop\TFSBuildUser_TFSBUILDCTRL1 2012-09-20 16_08_14_Any CPU_Release.coveragexml")
     deserializer = System.Xml.Serialization.XmlSerializer(CoverageXml.Model.CoverageDSPriv)
 
     # should be a CoverageXml.Xml.Model.CoverageDSPriv
     deserialized = deserializer.Deserialize(reader)
 
-    #pprint(deserialized)
+    print dir(deserialized)
 
+    for item in deserialized.Items:
+        #print item
+        if type(item) is CoverageXml.Model.CoverageDSPrivModule :
+            #print "CoverageDSPrivModule"
+            print item.ModuleName
+        elif type(item) is CoverageXml.Model.CoverageDSPrivSourceFileNames :
+            #print "CoverageDSPrivSourceFileNames"
+            print item.SourceFileName    
+        else:
+            raise("unknown type : %s " % (type(item),))  
 
     raw_input("press any key to continue or whatever ...")
 
