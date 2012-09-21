@@ -1,3 +1,6 @@
 *.suo
 *.coveragexml.xml
 *.coveragexml
+*.user
+bin
+obj
