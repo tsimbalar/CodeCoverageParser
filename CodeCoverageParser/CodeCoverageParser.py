@@ -31,8 +31,8 @@ def main():
 
     import argparse
     parser = argparse.ArgumentParser(description='Parses a VS *.coveragexml file and extract information about the coverage.')
-    parser.add_argument('--methodanonymous', help='include methods whose name starts with <', action='store')
-    parser.add_argument('--showignored', help='show items that are ignored', action='store')
+    parser.add_argument('--m', help='include methods whose name starts with <', action='store_true')
+    parser.add_argument('--a', help='show items that are ignored', action='store_true')
     parser.add_argument('file_path', help='the file to load')
     args = parser.parse_args()
 
