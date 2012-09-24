@@ -15,6 +15,10 @@
     <IsWindowsApplication>False</IsWindowsApplication>
     <InterpreterId>c040fad3-b7d8-4fd7-bafd-4acb289a073c</InterpreterId>
     <InterpreterVersion>2.7</InterpreterVersion>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>"C:\Users\tdesodt\Desktop\TFSBuildUser_TFSBUILDCTRL1 2012-09-20 16_08_14_Any CPU_Release.coveragexml"</CommandLineArguments>
+    <InterpreterPath />
+    <InterpreterArguments />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

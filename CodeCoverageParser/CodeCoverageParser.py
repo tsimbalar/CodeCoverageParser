@@ -29,16 +29,33 @@ def load_coverage_file(file_path):
 
 def main():    
 
+    import argparse
+    parser = argparse.ArgumentParser(description='Parses a VS *.coveragexml file and extract information about the coverage.')
+    parser.add_argument('file_path', help='the file to load')
+    args = parser.parse_args()
+
     # should be a CoverageXml.Xml.Model.CoverageDSPriv
-    deserialized = load_coverage_file(r"C:\Users\tdesodt\Desktop\TFSBuildUser_TFSBUILDCTRL1 2012-09-20 16_08_14_Any CPU_Release.coveragexml")
+    #deserialized = load_coverage_file(r"C:\Users\tdesodt\Desktop\TFSBuildUser_TFSBUILDCTRL1 2012-09-20 16_08_14_Any CPU_Release.coveragexml")
+    deserialized = load_coverage_file(args.file_path)
 
     print "%s source files" % deserialized.SourceFiles.Count
 
     for i, analyzed_module in enumerate( deserialized.Modules):
         print "- ", i, " ", analyzed_module.ModuleName
 
-        for infoTuple in extract_coverage_info(analyzed_module).items():
-            print "\t%s :\t%s" % (infoTuple)
+        #for infoTuple in extract_coverage_info(analyzed_module).items():
+        #    print "\t%s :\t%s" % (infoTuple)
+
+        for j, namespace in enumerate(analyzed_module.Namespaces):
+            print "\t- ", j, " ", namespace.NamespaceName
+            #for infoTuple in extract_coverage_info(namespace).items():
+            #    print "\t\t%s :\t%s" % (infoTuple)
+
+            for k, the_class in enumerate(namespace.Classes):
+                print "\t\t- ", k, " ", the_class.ClassName
+                for infoTuple in extract_coverage_info(the_class).items():
+                    print "\t\t\t%s :\t%s" % (infoTuple)
+
     raw_input("press any key to continue or whatever ...")
 
 #trick to run only directly, not when imported as a module...
