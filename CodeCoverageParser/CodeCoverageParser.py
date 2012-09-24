@@ -22,18 +22,14 @@ def main():
     # should be a CoverageXml.Xml.Model.CoverageDSPriv
     deserialized = deserializer.Deserialize(reader)
 
-    print dir(deserialized)
+    print "%s source files" % deserialized.SourceFiles.Count
 
-    for item in deserialized.Items:
-        #print item
-        if type(item) is CoverageXml.Model.CoverageDSPrivModule :
-            #print "CoverageDSPrivModule"
-            print item.ModuleName
-        elif type(item) is CoverageXml.Model.CoverageDSPrivSourceFileNames :
-            #print "CoverageDSPrivSourceFileNames"
-            print item.SourceFileName    
-        else:
-            raise("unknown type : %s " % (type(item),))  
+    for i, analyzed_module in enumerate( deserialized.Modules):
+        print "- ", i, " ", analyzed_module.ModuleName
+        print dir(analyzed_module)
+
+    
+        
 
     raw_input("press any key to continue or whatever ...")
 

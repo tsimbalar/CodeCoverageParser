@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CoverageDSPriv.cs" />
+    <Compile Include="Model\CoverageDSPrivModule.cs" />
+    <Compile Include="Model\CoverageDSPrivModuleNamespaceTable.cs" />
+    <Compile Include="Model\CoverageDSPrivModuleNamespaceTableClass.cs" />
+    <Compile Include="Model\CoverageDSPrivModuleNamespaceTableClassMethod.cs" />
+    <Compile Include="Model\CoverageDSPrivModuleNamespaceTableClassMethodLines.cs" />
+    <Compile Include="Model\CoverageDSPrivSourceFileNames.cs" />
     <Compile Include="Model\generated\coverage_coveragexml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,6 +57,9 @@
     <None Include="xsd\coverage.coveragexml.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetPath) $(SolutionDir)CodeCoverageParser\ /Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
